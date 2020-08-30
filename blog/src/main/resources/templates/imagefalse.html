@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-sacle=1.0"/>
+    <title>相册详情</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}" />
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/animate.css@3.5.2/animate.min.css" th:href="@{https://unpkg.com/animate.css@3.5.2/animate.min.css}"
+    />
+    <style>
+        *{margin: 0;padding: 0 }
+        body{background-color: rgba(0,0,0,0.5) !important;}
+        ul{position: relative;}
+        ul li{
+            box-shadow: 0 0 5px rgba(0,0,0,0.8) ;
+            position: absolute ;
+            transition: all 1s ;
+            /*width: 50%;*/
+        }
+        .checked {
+            left: 50% !important;
+            top:400px !important;
+            transform: rotate(0deg) translate(-50%,-50%) scale(1.8) !important;
+            z-index: 999 !important;
+        }
+        ul li img{
+            width: 250px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body th:inline="text">
+<!--导航-->
+<nav class="ui inverted attached segment m-padd-tb-mini m-shadow-small ">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header item">helinfeng</h2>
+            <a href="#" class=" m-item item me-size m-mobile-hidde"><i class="home brown icon"></i>首页</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="idea olive icon"></i>分类</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="tags teal icon"></i>标签</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="clone teal icon"></i>归档</a>
+            <a href="#" class="active m-item item me-size m-mobile-hidde"><i class="images outline brown icon"></i>相册</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="headphones purple icon"></i>音乐</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="info blue icon"></i>关于我</a>
+            <div class="right item ">
+                <form name="search" action="#" th:action="@{/search}" target="_blank" method="get">
+                    <div class="ui icon input">
+                        <input type="text" name="query" placeholder="搜索..."/>
+                        <i onclick="document.forms['search'].submit()"  class="search icon link"></i>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui  menu toggle black icon button m-top-right m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--中间博客-->
+<br>
+<br>
+<br>
+<br>
+<br>
+
+        <ul id="wang">
+
+        </ul>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+    <script src="../static/js/jquery-1.11.1-min.js" type="text/javascript" th:src="@{/static/js/jquery-1.11.1-min.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js}"></script>
+    <script type="text/javascript">
+        $(".menu.toggle").click(function () {
+            $(".m-item").toggleClass("m-mobile-hidde")
+        });
+
+        window.addEventListener("load",function () {
+            var ul = document.getElementById("wang");
+            var w  = document.documentElement.clientWidth - 600;
+            var h  = document.documentElement.clientHeight - 500;
+            var arr = ["https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000",
+                "https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000",
+                "https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1000/2000/2000","https://picsum.photos/id/1014/367/267","https://picsum.photos/id/1014/367/267"];
+            for (var i = 0; i < arr.length ; i++) {
+                var li = document.createElement("li");
+                var img = document.createElement("img");
+                img.setAttribute('src',arr[i]);
+                li.appendChild(img);
+                li.style.left = parseInt(Math.random() * w) +'px';
+
+                li.style.top = parseInt(Math.random() * h) +'px';
+                li.style.transform = 'rotate('+Math.random()*360+'deg)';
+                li.addEventListener('click',function () {
+                    normal();
+
+                    this.className = 'checked';
+
+                });
+                ul.appendChild(li);
+            }
+            function normal() {
+                var lis = ul .children;
+                for (var i = 0; i <lis.length ; i++) {
+                    lis[i].className =''
+
+                }
+            }
+        })
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helinfeng.web.dao.BlogDao">
+    <select id="selectBlogList" resultType="com.helinfeng.web.domain.Blog">
+    select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        t.name as flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        a.type_id,
+        a.user_id,
+        a.comment_id,
+        a.description
+    from t_blog as a join t_types as t on a.type_id = t.id  order by a.update_time desc
+    </select>
+    <select id="selectBlogAndUser" resultType="com.helinfeng.web.domain.Blog">
+          select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        a.flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        p.name as type_id,
+        t.nickname as user_id,
+        t.avatar as  comment_id,
+        a.description
+    from t_blog as a join t_user as t on a.user_id = t.id join t_types as p on a.type_id = p.id		order by a.update_time desc
+    </select>
+    <select id="selectCountType" resultType="com.helinfeng.web.domain.VoCountType">
+        select count(*)as countType,t.name,b.type_id as id   from t_blog as b join t_types as t on b.type_id = t.id group by t.id order by countType desc
+    </select>
+    <select id="selectCountTag" resultType="com.helinfeng.web.domain.VoCountType">
+        select  count(*) as countType,t.name ,t.id as id from t_blog as b join t_blog_tag as l on b.id = l.blog_id  join t_tag as t on l.tag_id = t.id group by t.name order by countType desc
+    </select>
+    <select id="selectRecommendBlog" resultType="com.helinfeng.web.domain.Blog">
+        select id,
+        title,
+        content,
+        firstPicture,
+        flag,
+        views,
+        isAppreciation,
+        isSharStatement,
+        isCommentAbled,
+        isPublished,
+        recommend,
+        create_time,
+        update_time,
+        type_id,
+        user_id,
+        comment_id,
+        description from t_blog where recommend = "1" order by update_time desc
+    </select>
+    <select id="searchBlogByLike" resultType="com.helinfeng.web.domain.Blog">
+          select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        a.flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        p.name as type_id,
+        t.nickname as user_id,
+        t.avatar as  comment_id,
+        a.description
+    from t_blog as a join t_user as t on a.user_id = t.id join t_types as p on a.type_id = p.id	 where a.title like '%' #{query} '%' or a.content like '%' #{query} '%'	order by a.update_time desc
+    </select>
+    <select id="selectSearch" resultType="com.helinfeng.web.domain.Blog">
+            select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        t.name as flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        a.type_id,
+        a.user_id,
+        a.comment_id
+    from t_blog as a join t_types as t on a.type_id = t.id
+        <where>
+            <if test="title != null and title !=''">
+                a.title like '%' #{title} '%'
+            </if>
+            <if test="type_id!=null and type_id !=''">
+                or a.type_id =  #{type_id}
+            </if>
+            <if test="recommend!=null and recommend!=''">
+                and a.recommend = #{recommend}
+            </if>
+        </where>
+    order by update_time desc
+    </select>
+    <insert id="insertBlog">
+        insert into t_blog (
+        id,
+        title,
+        content,
+        firstPicture,
+        flag,
+        views,
+        isAppreciation,
+        isSharStatement,
+        isCommentAbled,
+        isPublished,
+        recommend,
+        create_time,
+        update_time,
+        type_id,
+        user_id,
+        comment_id,
+        description
+        )
+        values (#{id},#{title},#{content},#{firstPicture},#{flag},#{views},#{isAppreciation},#{isSharStatement},#{isCommentAbled},#{isPublished},#{recommend},
+        #{create_time},#{update_time},#{type_id},#{user_id},#{comment_id},#{description}
+        )
+    </insert>
+    <delete id="deleteById">
+        delete from t_blog where id = #{id}
+    </delete>
+    <delete id="deleteByTypeId">
+        delete from t_blog where type_id = #{id}
+    </delete>
+    <delete id="deletBlogByTagId">
+       delete from t_blog where id = (select blog_id from t_blog_tag where tag_id = #{id})
+    </delete>
+    <select id="selectBlogById" resultType="com.helinfeng.web.domain.Blog">
+        select
+        id,
+        title,
+        content,
+        firstPicture,
+        flag,
+        views,
+        isAppreciation,
+        isSharStatement,
+        isCommentAbled,
+        isPublished,
+        recommend,
+        create_time,
+        update_time,
+        type_id,
+        user_id,
+        comment_id,
+        description
+        from t_blog where id=#{id}
+    </select>
+    <update id="updateBlog">
+        update t_blog set
+        title = #{title},
+        content = #{content},
+        firstPicture = #{firstPicture},
+        flag = #{flag},
+        views = #{views},
+        isAppreciation = #{isAppreciation},
+        isSharStatement = #{isSharStatement},
+        isCommentAbled = #{isCommentAbled},
+        isPublished = #{isPublished},
+        recommend = #{recommend},
+        update_time = #{update_time},
+        type_id = #{type_id},
+        description = #{description}
+        where id=#{id}
+    </update>
+    <update id="updateViews">
+        update t_blog set views = views +1 where id=#{id}
+    </update>
+
+    <select id="selectBlogByTypeId" resultType="com.helinfeng.web.domain.Blog">
+                  select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        a.flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        p.name as type_id,
+        t.nickname as user_id,
+        t.avatar as  comment_id,
+        a.description
+    from t_blog as a join t_user as t on a.user_id = t.id join t_types as p on a.type_id = p.id	 where a.type_id = #{id}	order by a.update_time desc
+    </select>
+    <select id="selectBlogTagId" resultType="com.helinfeng.web.domain.Blog">
+                 select
+        a.id,
+        a.title,
+        a.content,
+        a.firstPicture,
+        a.flag,
+        a.views,
+        a.isAppreciation,
+        a.isSharStatement,
+        a.isCommentAbled,
+        a.isPublished,
+        a.recommend,
+        a.create_time,
+        a.update_time,
+        p.name as type_id,
+        t.nickname as user_id,
+        t.avatar as  comment_id,
+        a.description
+    from t_blog as a join t_user as t on a.user_id = t.id join t_types as p on a.type_id = p.id	 where a.id in ( select blog_id from t_blog_tag where tag_id = #{id})	order by a.update_time desc
+    </select>
+    <select id="selectTimeCount" resultType="java.lang.String">
+        SELECT DATE_FORMAT(update_time,'%Y') year FROM t_blog GROUP BY year;
+    </select>
+    <select id="selectBlogByTime" resultType="com.helinfeng.web.domain.Blog">
+        select * from t_blog where update_time like concat('%',#{list},'%') order by update_time desc
+    </select>
+    <select id="selectAllCount" resultType="java.lang.Integer">
+        select count(*) from t_blog
+    </select>
+</mapper>

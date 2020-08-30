@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helinfeng.web.dao.UserDao">
+    <select id="queryUser" resultType="com.helinfeng.web.domain.User">
+        select
+        id,
+        nickname,
+        userName,
+        passWord,
+        email,
+        types,
+        avatar,
+        create_time,
+        update_time
+        from t_user where userName = #{userName} and passWord = #{passWord}
+    </select>
+    <select id="selectById" resultType="com.helinfeng.web.domain.User">
+    select
+        id,
+        nickname,
+        userName,
+        passWord,
+        email,
+        types,
+        avatar,
+        create_time,
+        update_time
+    from t_user where id = (select user_id from t_blog where id = #{id})
+    </select>
+
+    <insert id="insertUser">
+        insert into t_user values (#{id},#{nickname},#{userName},#{passWord},#{email},#{types},#{avatar},#{create_time},#{update_time})
+    </insert>
+</mapper>

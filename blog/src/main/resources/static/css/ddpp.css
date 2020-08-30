@@ -1,0 +1,252 @@
+#profilePicBig
+{
+  z-index: -5;
+}
+
+#sidebarBtnSegment
+{
+  position: fixed;
+  right: 0%;
+  margin-top: 5%;
+  padding-right: 5%;
+  z-index: 10;
+}
+
+#picBig
+{
+  filter: blur(15px);
+}
+
+#picBigDimmer
+{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#name
+{
+  font-family: 'Playfair Display', serif;
+}
+
+#title
+{
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 10px;
+}
+
+#aboutMeSection
+{
+  margin-top: 50px;
+}
+
+#sampleWorksSection
+{
+  margin-top: 25px;
+}
+
+#aboutMeTitle
+{
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+}
+
+#aboutMeContent
+{
+  font-family: 'Playfair Display', serif;
+}
+
+#referencesRow
+{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+#sendBtn
+{
+  background-color: rgb(42, 42, 42);
+  color: white;
+  font-family: 'Playfair Display', serif !important;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+label
+{
+  font-family: 'Playfair Display', serif !important;
+}
+
+footer
+{
+  margin-top: 25px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(42, 42, 42);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 16px;
+}
+
+.sidebarItem
+{
+  font-family: 'Playfair Display', serif !important;
+}
+
+.sampleWorksCols
+{
+  padding-left: 0rem !important;
+  padding-right: 0rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+.image
+{
+  cursor: pointer;
+}
+
+.awardTitle
+{
+  font-family: 'Playfair Display', serif !important;
+  font-size: 20px;
+}
+
+.awardYear
+{
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 512px)
+{
+  .sidebarItem
+  {
+    font-family: 'Playfair Display', serif;
+  }
+
+  #name
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+  }
+
+  #title
+  {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  #aboutMeTitle
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+  }
+
+  #aboutMeContent
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 640px)
+{
+  .sidebarItem
+  {
+    font-family: 'Playfair Display', serif;
+  }
+
+  #name
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+  }
+
+  #title
+  {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 13px;
+  }
+
+  #aboutMeTitle
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+  }
+
+  #aboutMeContent
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px)
+{
+  .sidebarItem
+  {
+    font-family: 'Playfair Display', serif;
+  }
+
+  #name
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+  }
+
+  #title
+  {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  #aboutMeTitle
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+  }
+
+  #aboutMeContent
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+  }
+}
+
+@media only screen and (min-width: 896px)
+{
+  .sidebarItem
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+  }
+
+  #name
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+  }
+
+  #title
+  {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 15px;
+  }
+
+  #aboutMeTitle
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 45px;
+  }
+
+  #aboutMeContent
+  {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+  }
+}

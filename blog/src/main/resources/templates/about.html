@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-sacle=1.0"/>
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}"/>
+    <link rel="stylesheet" href="../static/css/about.css" th:href="@{/static/css/about.css}"/>
+</head>
+<body>
+
+<!--导航-->
+<nav class="ui inverted attached segment m-padd-tb-mini m-shadow-small stackable ">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header item">helinfeng</h2>
+            <a href="#"   th:href="@{/}" class=" m-item item me-size m-mobile-hidde"><i class="home brown icon"></i>首页</a>
+            <a href="#" th:href="@{/type/-1}" class="m-item item me-size m-mobile-hidde"><i class="idea olive icon"></i>分类</a>
+            <a href="#" th:href="@{/tag/-1}" class="m-item item me-size m-mobile-hidde"><i class="tags teal icon"></i>标签</a>
+            <a href="#"  th:href="@{/archives}" class="m-item item me-size m-mobile-hidde"><i class="clone teal icon"></i>归档</a>
+            <a href="#" th:href="@{/imageType}" class="m-item item me-size m-mobile-hidde"><i class="images outline brown icon"></i>相册</a>
+            <a href="#" th:href="@{/music}" class="m-item item me-size m-mobile-hidde"><i class="headphones purple icon"></i>音乐</a>
+            <a href="#" class="active m-item item me-size m-mobile-hidde"><i class="info blue icon"></i>关于我</a>
+            <div class="right item ">
+                <form name="search" action="#" th:action="@{/search}" target="_blank" method="get">
+                    <div class="ui icon input">
+                        <input type="text" name="query" placeholder="请输入博客关键词..."/>
+                        <i onclick="document.forms['search'].submit()"  class="search icon link"></i>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui  menu toggle black icon button m-top-right m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<!--博客详情页面内容-->
+<div class="m-margin-top-large  animated zoomIn ">
+    <div class="ui container">
+        <div  class="ui stackable grid">
+            <div class="eleven wide column">
+                <div class="ui segment">
+                    <img src="../static/images/huoyin.jpg" th:src="@{/static/images/huoyin.jpg}"   class="ui rounded image" style="width: 100% ;height: 600px">
+                </div>
+
+            </div>
+            <div class="five wide column">
+                <div class="ui top  attached segment">
+                    <div class="ui header" ><h2>关于我</h2></div>
+                </div>
+                <div class="ui attached segment">
+                    <p class="m-text-thin m-text-lined m-text-spaced">入门级测试工程师</p>
+                    <p class="m-text-thin m-text-lined m-text-spaced">熟悉基础功能,性能测试,拥有一个月的工作经验,现任某动入门级测试工程师,</p>
+                </div>
+                <div class="ui attached segment ">
+                       <div class="ui orange basic label m-margin-top-large">编程</div>
+                       <div class="ui orange basic label m-margin-top-large">游戏</div>
+                       <div class="ui orange basic label m-margin-top-large">音乐</div>
+                       <div class="ui orange basic label m-margin-top-large">旅游</div>
+                       <div class="ui orange basic label m-margin-top-large">游泳</div>
+                       <div class="ui orange basic label m-margin-top-large">打篮球</div>
+
+                </div>
+                <div class="ui attached segment">
+                    <div class="ui teal basic label m-margin-top-large">java</div>
+                    <div class="ui teal basic label m-margin-top-large">软件测试</div>
+                    <div class="ui teal basic label m-margin-top-large">python</div>
+                    <div class="ui teal basic label m-margin-top-large">selenium</div>
+                    <div class="ui teal basic label m-margin-top-large">硬件测试</div>
+                    <div class="ui teal basic label m-margin-top-large">msyql</div>
+                    <div class="ui teal basic label m-margin-top-large">springBoot</div>
+                    <div class="ui teal basic label m-margin-top-large">springMVC</div>
+                    <div class="ui teal basic label m-margin-top-large">Mybatis</div>
+                    <div class="ui teal basic label m-margin-top-large">Redis</div>
+                    <div class="ui teal basic label m-margin-top-large">Docker</div>
+
+                </div>
+                <div class="ui bottom attached segment">
+                    <a href="https://github.com/helinfengxs" target="_blank" class="ui circular icon button"  data-content="https://github.com/helinfengxs"> <i class="github icon"></i></a>
+                    <a href="#" class="ui  weixin circular icon button"> <i class="weixin icon"></i></a>
+                    <a href="#" class="ui qq circular icon button" data-content="784734321"> <i class="qq icon"></i></a>
+                    <a href="#" class="ui email circular icon button" data-content="helinfengxs@163.com" data-position="bottom center"><i class="envelope  icon"></i></a>
+                </div>
+                <div class="ui wechat-qr flowing popup transition hidden">
+                    <img class="ui rounded image" src="../static/images/foot01.gif" th:src="@{/static/images/foot01.gif}" alt="" style="width: 200px">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部-->
+<footer class="ui inverted vertical segment m-padded-tb-massive m-opacity">
+    <!--容器-->
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >联系我</div>
+                <div class="ui inverted link list">
+                    <div href="#" class="m-text-thin">Email：helinfengxs@163.com</div>
+                    <div href="#" class="m-text-thin">QQ：784734321</div>
+                </div>
+            </div>
+
+            <div class="four wide column" >
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >微信</div>
+                        <img src="../static/images/foot.gif" class="ui m-margin-top rounded image" alt="" style="width: 50%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >问题交流（QQ群）</div>
+                        <img src="../static/images/foot01.gif" class="ui m-margin-top rounded image" alt="" style="width: 70%">
+                    </div>
+                </div>
+            </div>
+            <!--博客运行时间统计-->
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted  m-text-thin m-text-spaced m-margin-top">博客框架</div>
+                <!--<p id="htmer_time" class="item m-text-thin"></p>-->
+                <div id="blog-message">
+                    <div class="ui inverted link list" style="align-content: center;margin-top: 10px">
+                        <div class="m-text-thin" style="text-align: left;margin-left: 75px;">
+                            后端框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">SpringBoot</h2><br>
+                            数据库框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">Mybatis</h2><br>
+                            前端框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">Semantic UI</h2><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-spaced m-text-thin m-opacity-small">CopyRight © 2020-2021 helinfengxs.com 版权所有 <a href="#" th:href="@{https://beian.miit.gov.cn/}" target="_blank">蜀ICP备2020025880号-1</a>
+    </div>
+    </div>
+
+</footer>
+
+
+<script src="../static/js/jquery-1.11.1-min.js" type="text/javascript" th:src="@{/static/js/jquery-1.11.1-min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js}"></script>
+<script type="text/javascript">
+    $(".menu.toggle").click(function () {
+        $(".m-item").toggleClass("m-mobile-hidde")
+    });
+    $(".qq").popup();
+    $(".weixin,button").popup({
+        popup : $('.wechat-qr'),
+        position:"top center"
+    });
+    $('.email').popup();
+    $('.circular').popup();
+</script>
+</body>
+</html>

@@ -1,0 +1,480 @@
+/*body{*/
+/*	!*background: url("../images/blue-snow.png");*!*/
+/*	background: url("../images/sandpaper.png");*/
+/*}*/
+.m-padd-tb-mini{
+	padding-top:0.2em !important ;
+	padding-bottom: 0.2em !important;
+}
+.me-size{
+	font-size: 1em;
+	font-family: STSong;
+}
+.m-padd-tb-tiny{
+	padding-top:0.3em !important ;
+	padding-bottom: 0.3em !important;
+}
+.m-padd-tb-small{
+	padding-top:0.5em !important ;
+	padding-bottom: 0.5em !important;
+}
+.m-padd-tb{
+	padding-top:1em !important ;
+	padding-bottom: 1em !important;
+}
+.m-padd-tb-large{
+	padding-top:2em !important ;
+	padding-bottom: 2em !important;
+}
+.m-padd-tb-big{
+	padding-top:3em !important ;
+	padding-bottom: 3em !important;
+}
+.m-padd-tb-huge{
+	padding-top:4em !important ;
+	padding-bottom: 4em !important;
+}
+.m-padd-tb-massive{
+	padding-top:5em !important ;
+	padding-bottom: 5em !important;
+}
+.m-padd-lf{
+	padding-left: 4em !important;
+	padding-right: 4em !important;
+}
+.m-padd-lf-responsive{
+	padding-left: 4em !important;
+	padding-right: 4em !important;
+}
+.m-padded{
+	padding: 1em !important;
+	opacity:0.4 !important;
+}
+/**
+margin
+ */
+.m-margin-tb-tiny{
+	margin-top: 0.3em !important;
+	margin-bottom: 0.3em!important;
+}
+.m-margin-top-small{
+	margin-top: 0.5em !important;
+}
+.m-margin-top-large{
+	margin-top: 1em !important;
+}
+.m-bottom-mini{
+	margin-bottom: 0.5em !important;
+}
+.m-margin-lf{
+	margin-left: 0.5em!important;
+}
+/**
+	position
+ */
+.m-fixed{
+	position: fixed !important;
+	z-index: 10!important;
+}
+.m-right-bottom{
+	bottom: 0 !important;
+	right: 0 !important;
+}
+/**
+	---------------text--------------
+ */
+.m-text-thin{
+	font-weight: 300 !important;
+}
+.m-text-spaced{
+	letter-spacing: 1px !important;
+}
+.m-text-spaced-large{
+	letter-spacing: 0.5em !important;
+}
+.m-text-lined{
+	line-height: 1.8;
+}
+.m-text{
+	font-size: 1em !important;
+}
+
+.m-opacity-mini{
+	opacity: 0.8 !important;
+}
+.m-opacity-small{
+	opacity: 0.6 !important;
+
+}
+/*
+	----------------------display---------------------
+*/
+.m-inline-block{
+	display: inline-block !important;
+}
+.m-container{
+	max-width: 150em !important;
+	margin:auto !important;
+}
+.m-container-small{
+	max-width: 60em !important;
+	margin:auto !important;
+}
+/**
+color
+ */
+.m-pink{
+	color: #e03997!important;
+}
+.m-blue{
+	color: #0081ff!important;
+}
+.m-cyan{
+	color: #1cbbb4 !important;
+}
+.m-blue{
+	color: #9c26b0 !important;
+}
+.m-olive{
+	color: #8dc63f !important;
+}
+.m-orange{
+	color: #f37b1d !important;
+}
+
+/**
+*********
+ */
+.m-top-right{
+	position: absolute;
+	top:0;
+	right: 0;
+}
+/**
+shadow
+ */
+.m-shadow-small{
+	-webkit-box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+}
+/**
+mobile
+ */
+.m-mobile-show{
+	display: none !important;
+}
+.m-mobile-wide{
+	width: 100% !important;
+}
+@media screen and (max-width: 768px) {
+	.m-mobile-hidde{
+		display: none !important;
+	}
+	.m-mobile-show{
+		display: block !important;
+	}
+	.m-padd-lf-responsive{
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+	.m-mobile-clear{
+		padding-left: 0!important;
+		padding-right: 0!important;
+	}
+
+}
+.typo li{
+	font-weight: 300;
+	padding: 4px;
+}
+#profilePicBig
+{
+	z-index: -5;
+}
+
+#sidebarBtnSegment
+{
+	position: fixed;
+	right: 0%;
+	margin-top: 5%;
+	padding-right: 5%;
+	z-index: 10;
+}
+
+#picBig
+{
+	filter: blur(15px);
+}
+
+#picBigDimmer
+{
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#name
+{
+	font-family: 'Playfair Display', serif;
+}
+
+#title
+{
+	font-family: 'Playfair Display', serif;
+	font-style: italic;
+	font-size: 10px;
+}
+
+#aboutMeSection
+{
+	margin-top: 50px;
+}
+
+#sampleWorksSection
+{
+	margin-top: 25px;
+}
+
+#aboutMeTitle
+{
+	font-family: 'Playfair Display', serif;
+	font-size: 30px;
+}
+
+#aboutMeContent
+{
+	font-family: 'Playfair Display', serif;
+}
+
+#referencesRow
+{
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#sendBtn
+{
+	background-color: rgb(42, 42, 42);
+	color: white;
+	font-family: 'Playfair Display', serif !important;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+label
+{
+	font-family: 'Playfair Display', serif !important;
+}
+
+/* footer
+{
+  margin-top: 25px;
+  height: 50px;
+  width: 100%;
+  background-color: rgb(42, 42, 42);
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-family: 'Playfair Display', serif !important;
+  font-size: 16px;
+}
+ */
+.sidebarItem
+{
+	font-family: 'Playfair Display', serif !important;
+}
+
+.sampleWorksCols
+{
+	padding-left: 2rem !important;
+	padding-right: 2rem !important;
+	padding-top: 2rem !important;
+	padding-bottom: 2rem !important;
+}
+
+.image
+{
+	cursor: pointer;
+}
+
+.awardTitle
+{
+	font-family: 'Playfair Display', serif !important;
+	font-size: 20px;
+}
+
+.awardYear
+{
+	font-family: 'Playfair Display', serif !important;
+	font-style: italic;
+}
+
+@media only screen and (min-width: 512px)
+{
+	.sidebarItem
+	{
+		font-family: 'Playfair Display', serif;
+	}
+
+	#name
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 35px;
+	}
+
+	#title
+	{
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		font-size: 13px;
+	}
+
+	#aboutMeTitle
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 35px;
+	}
+
+	#aboutMeContent
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 640px)
+{
+	.sidebarItem
+	{
+		font-family: 'Playfair Display', serif;
+	}
+
+	#name
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 35px;
+	}
+
+	#title
+	{
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		font-size: 13px;
+	}
+
+	#aboutMeTitle
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 35px;
+	}
+
+	#aboutMeContent
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 15px;
+	}
+}
+
+@media only screen and (min-width: 768px)
+{
+	.sidebarItem
+	{
+		font-family: 'Playfair Display', serif;
+	}
+
+	#name
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 45px;
+	}
+
+	#title
+	{
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		font-size: 15px;
+	}
+
+	#aboutMeTitle
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 45px;
+	}
+
+	#aboutMeContent
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 16px;
+	}
+}
+
+@media only screen and (min-width: 896px)
+{
+	.sidebarItem
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 20px;
+	}
+
+	#name
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 45px;
+	}
+
+	#title
+	{
+		font-family: 'Playfair Display', serif;
+		font-style: italic;
+		font-size: 15px;
+	}
+
+	#aboutMeTitle
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 45px;
+	}
+
+	#aboutMeContent
+	{
+		font-family: 'Playfair Display', serif;
+		font-size: 16px;
+	}
+
+}
+.m-bg{
+	width: 100%;
+	height: 650px;
+	object-fit: cover;
+}
+.m-bg-type_outer {
+	display: block;
+	/*margin: 10px auto 0 0;*/
+	background-size: cover;
+	position: relative;
+	overflow: hidden;
+}
+.m-bg-class_cover {
+	width: 100%;
+	height: 750px;
+	line-height: 50px;
+	padding-left: 6px;
+	background-color: rgba(0, 0, 0, .60);
+	/*color: #FFFFFF;*/
+	/*font-size: 26px;*/
+	position: absolute;
+	left: 0px;
+	bottom: 0px;
+}
+.m-font-size-title{
+	font-size: 450%;
+	color: #ffffff;
+}
+.m-right-bottom {
+	bottom: 0 !important;
+	right: 0 !important;
+}
+.m-font-size-text-init-title{
+	font-size: 24px;
+	color: #fffffc;
+	align-content: center;
+	font-family:'STXingkai';
+}

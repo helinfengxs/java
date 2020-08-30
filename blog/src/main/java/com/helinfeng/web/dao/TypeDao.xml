@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helinfeng.web.dao.TypeDao">
+    <insert id="saveByType">
+        insert into t_types values (#{id},#{name},#{insertTime})
+    </insert>
+    <select id="selectTypeByName" resultType="int">
+        select count(*) from t_types where name = #{name}
+    </select>
+    <delete id="deleteTypeById">
+        delete from  t_types where id = #{id}
+    </delete>
+    <select id="selectTypeList" resultType="com.helinfeng.web.domain.Type">
+        select id,name from t_types order by insertTime desc
+    </select>
+    <select id="selectTypeById" resultType="int">
+        select count(*) from  t_types where id = #{id}
+    </select>
+    <update id="updateTypeById">
+        update t_types set name = #{name},insertTime = #{insertTime} where id = #{id}
+    </update>
+    <select id="countTotal" resultType="int">
+        select count(t.name)  from t_blog as b join t_types as t on b.type_id = t.id group by t.name
+    </select>
+</mapper>

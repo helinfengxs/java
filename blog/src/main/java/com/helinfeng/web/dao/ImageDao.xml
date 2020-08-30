@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helinfeng.web.dao.ImageDao">
+    <select id="selectAll" resultType="com.helinfeng.web.domain.Image">
+        select i.id,i.imageAddr,t.createTime,t.name as imageTypeId from t_image as i join t_image_type  as t on i.imageTypeId = t.id order by i.createTime desc
+    </select>
+    <delete id="deleteImageById">
+        delete  from t_image where id = #{id}
+    </delete>
+    <insert id="insertImage">
+        insert into t_image (id,imageAddr,createTime,imageTypeId)
+        values
+        <foreach collection="list" item="item" index="index" separator="," >
+            (#{item.id},#{item.imageAddr},#{item.createTime},#{item.imageTypeId})
+        </foreach>
+    </insert>
+
+    <select id="selectById" resultType="com.helinfeng.web.domain.Image">
+        select id,imageAddr,createTime,imageTypeId from t_image where id = #{id}
+    </select>
+
+    <select id="selectByTypeId" resultType="com.helinfeng.web.domain.Image">
+        select id,imageAddr,createTime,imageTypeId from t_image where imageTypeId = #{id} order by createTime desc
+    </select>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.helinfeng.web.dao.TagDao">
+    <select id="selectTagsList" resultType="com.helinfeng.web.domain.Tag">
+        select id,name,insertTime from t_tag order by insertTime desc
+    </select>
+    <select id="selectTagByName" resultType="int">
+        select count(*) from t_tag where name = #{name}
+    </select>
+    <insert id="insertTag">
+        insert into t_tag (id,name,insertTime) values (#{id},#{name},#{insertTime})
+    </insert>
+    <delete id="deleteTagById">
+        delete from t_tag  where id = #{id}
+    </delete>
+    <select id="selectTypeById" resultType="int">
+        select count(*) from t_tag where id = #{id}
+    </select>
+    <update id="updateTypeById">
+        update t_tag set name = #{name},insertTime = #{insertTime} where id = #{id}
+    </update>
+    <select id="selectTagByBlogId" resultType="com.helinfeng.web.domain.Tag">
+        select id,name,insertTime from t_tag where id in (select tag_id from t_blog_tag  where blog_id =  #{id})
+   </select>
+</mapper>

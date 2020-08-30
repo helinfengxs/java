@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-sacle=1.0"/>
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css" th:href="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css}">
+    <link rel="stylesheet" href="../static/css/about.css" th:href="@{/sataic/css/about.css}"/>
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/static/css/me.css}"/>
+</head>
+<body>
+<!--导航-->
+<nav class="ui inverted attached segment m-padd-tb-mini m-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu ">
+            <h2 class="ui teal header item">helinfeng</h2>
+            <a href="#"  th:href="@{/}" class="m-item item me-size m-mobile-hidde"><i class="home brown icon"></i>首页</a>
+            <a href="#" th:href="@{/type/-1}" class="m-item item me-size m-mobile-hidde"><i class="idea olive icon"></i>分类</a>
+            <a href="#" th:href="@{/tag/-1}" class="m-item item me-size m-mobile-hidde"><i class="tags teal icon"></i>标签</a>
+            <a href="#" class="m-item item me-size m-mobile-hidde"><i class="clone teal icon"></i>归档</a>
+            <a href="#" th:href="@{/imageType}" class="m-item item me-size m-mobile-hidde"><i class="images outline brown icon"></i>相册</a>
+            <a href="#" th:href="@{/music}" class="m-item item me-size m-mobile-hidde"><i class="headphones purple icon"></i>音乐</a>
+            <a href="#" class="active m-item item me-size m-mobile-hidde"><i class="info blue icon"></i>关于我</a>
+            <div class="right item">
+                <form name="search" action="#" th:action="@{/search}" target="_blank" method="get">
+                    <div class="ui icon input">
+                        <input type="text" name="query" placeholder="请输入博客关键词..."/>
+                        <i onclick="document.forms['search'].submit()"  class="search icon link"></i>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui  menu toggle black icon button m-top-right m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<!--顶部背景图片-->
+<div class="m-bg-type_outer" style="width: 100%;height: 30%">
+    <div class="m-bg-class_cover">
+        <div class="ui container" style="position: relative ;bottom: -540px;">
+            <div class="m-font-size-title" align="center" style="font-family:'STXingkai'">关于我</div>
+            <div class="m-font-size-text-init-title m-margin-top" align="center">年轻即出发</div>
+        </div>
+    </div>
+</div>
+
+<!--个人资料描述-->
+<div class="ui container m-opacity box-shadow-max animated zoomIn">
+    <div class="ui segment m-margin-" align="center" style="color: #ff77ff !important; border: #CCBBFF solid">
+        <div class="m-margin-top-large" align="center">
+            <img class="ui circular image" align="center" src="../static/images/DW__9251.JPG" th:src="@{/static/images/DW__9251.JPG}" style="width: 150px;height: 150px;">
+        </div>
+        <div class="m-margin-top-small" style="font-size: x-large;font-family: STSong" align="center">FENG</div>
+
+        <div class="m-margin-top" align="center">
+            <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a>
+            <a href="#" class="ui qq circular icon button" data-content="784734321" data-position="bottom center"><i class="qq icon"></i></a>
+            <a href="https://github.com/" target="_blank" class="ui github circular icon button" data-content="点击跳转GitHub" data-position="bottom center"><i class="github icon"></i></a>
+<!--            <a href="https://blog.csdn.net" target="_blank" class="ui csdn circular icon button" data-content="点击跳转CSDN" data-position="bottom center"><i class="copyright outline icon"></i></a>-->
+            <a href="#" class="ui email circular icon button" data-content="helinfengxs@163.com" data-position="bottom center"><i class="envelope  icon"></i></a>
+
+        </div>
+
+        <div class="ui wechat-qr flowing popup transition hidden">
+            <img src="/images/Weichat.jpg" alt="" class="ui rounded image" style="width: 110px">
+            <div align="center">微信</div>
+        </div>
+        <div class="ui qq-qr flowing popup transition hidden">
+            <img src="/images/lshqq.jpg" alt="" class="ui rounded image" style="width: 110px">
+            <div align="center">QQ</div>
+        </div>
+        <hr class="m-margin-top-small" style="width: 30%">
+        <br>
+        <div>
+
+            <p>90后</p>
+            <p>少年像一个快乐的王子，他不问天多高，也不知人间尚有烦恼，</p>
+            <p>    一心只想摘下天上的明星</p>
+                <p>铺一条光辉灿烂的大道</p>
+
+            <br/> <br/> <br/> <br/> <br/>
+            <br/> <br/> <br/> <br/> <br/>
+
+
+
+        </div>
+        <hr class="m-margin-top-large">
+<!--        <br>-->
+<!--        <h2 class="m-margin-tb-tiny" style="font-size: xx-large;font-weight: bold;color: #F08047;font-family: STSong">打赏本站</h2>-->
+<!--        <div class="ui orange basic label m-margin-tb-tiny">-->
+<!--            <p style="font-size: medium">您的支持是对我最大的鼓励</p>-->
+<!--        </div>-->
+<!--        <br/>-->
+<!--        <div class="ui orange basic label">-->
+<!--            <div class="ui images" style="font-size: inherit !important;">-->
+<!--                <div class="image">-->
+<!--                    <img src="../static/images/header.jpg" alt="" class="ui rounded bordered image" style="width: 180px">-->
+<!--                    <div>支付宝</div>-->
+<!--                </div>-->
+<!--                <div class="image">-->
+<!--                    <img src="../static/images/header.jpg" alt="" class="ui rounded bordered image" style="width: 180px">-->
+<!--                    <div>微信</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+</div>
+
+<br>
+<br>
+
+<!--底部栏-->
+<footer class="ui inverted vertical segment m-padded-tb-massive m-opacity">
+    <!--容器-->
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced m-margin-top-max" >联系我</div>
+                <div class="ui inverted link list">
+                    <div href="#" class="m-text-thin">Email：helinfengxs@163.com</div>
+                    <div href="#" class="m-text-thin">QQ：784734321</div>
+                </div>
+            </div>
+
+            <div class="four wide column" >
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >微信</div>
+                        <img src="../static/images/foot.gif" class="ui m-margin-top rounded image" alt="" style="width: 50%">
+                    </div>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <!--微信二维码-->
+                        <div style="font-size: large;font-weight: bold" class="ui inverted m-text-thin m-text-spaced " >问题交流（QQ群）</div>
+                        <img src="../static/images/foot01.gif" class="ui m-margin-top rounded image" alt="" style="width: 70%">
+                    </div>
+                </div>
+            </div>
+            <!--博客运行时间统计-->
+            <div class="four wide column">
+                <div style="font-size: large;font-weight: bold" class="ui inverted  m-text-thin m-text-spaced m-margin-top">博客框架</div>
+                <!--<p id="htmer_time" class="item m-text-thin"></p>-->
+                <div id="blog-message">
+                    <div class="ui inverted link list" style="align-content: center;margin-top: 10px">
+                        <div class="m-text-thin" style="text-align: left;margin-left: 75px;">
+                            后端框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">SpringBoot</h2><br>
+                            数据库框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">Mybatis</h2><br>
+                            前端框架: <h2 class="ui orange header m-inline-block m-margin-top-null" style="font-size:medium;">Semantic UI</h2><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="m-text-spaced m-text-thin m-opacity-small">CopyRight © 2020-2021 helinfengxs.com 版权所有 <a href="#" th:href="@{https://beian.miit.gov.cn/}" target="_blank">蜀ICP备2020025880号-1</a>
+    </div>
+    </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js" th:src="@{/static/js/jquery-1.11.1-min.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" th:src="@{https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js}"></script>
+
+<script>
+    // $('#newblog-container').load(/*/footer/newblog*/"/footer/newblog");
+
+    $('#blog-message').load(/*/footer/blogmessage*/"/footer/blogmessage");
+
+
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    // 显示公众号
+    $('.tencent').popup({
+        popup : $('.tencent-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示微信
+    $('.wechat').popup({
+        popup : $('.wechat-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示QQ
+    $('.qq').popup({
+        popup : $('.qq-qr'),
+        position: 'bottom center'
+    });
+
+    // 显示邮箱
+    $('.email').popup();
+
+    // 显示CSDN
+    $('.csdn').popup();
+
+    // 显示github
+    $('.github').popup();
+
+
+
+
+    // 运行时间统计
+    function secondToDate(second) {
+        if (!second) {
+            return 0;
+        }
+        var time = new Array(0, 0, 0, 0, 0);
+        if (second >= 365 * 24 * 3600) {
+            time[0] = parseInt(second / (365 * 24 * 3600));
+            second %= 365 * 24 * 3600;
+        }
+        if (second >= 24 * 3600) {
+            time[1] = parseInt(second / (24 * 3600));
+            second %= 24 * 3600;
+        }
+        if (second >= 3600) {
+            time[2] = parseInt(second / 3600);
+            second %= 3600;
+        }
+        if (second >= 60) {
+            time[3] = parseInt(second / 60);
+            second %= 60;
+        }
+        if (second > 0) {
+            time[4] = second;
+        }
+        return time;
+    }
+
+
+
+</script>
+</body>
+</html>
